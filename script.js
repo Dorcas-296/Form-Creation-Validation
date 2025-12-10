@@ -14,7 +14,7 @@ form.addEventListener("submit", function(event) {
 const usernameInput = document.getElementById("username");
 if (usernameInput.value.trim().length <3) {
     isValid = false;
-    messages.push("username must be at least three characters long.");
+    messages.push("Username must be at least three characters long.");
 }
 
 //validation for email
@@ -28,7 +28,7 @@ if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
 const passwordInput = document.getElementById("password");
 if (passwordInput.value.length <8) {
     isValid = false;
-    messages.push("password must contain at least 8 length");
+    messages.push("Password must contain at least 8 length");
 }
 
 //make feedback div visible
@@ -41,4 +41,5 @@ if (isValid) {
     feedbackDiv.innerHTML = messages.join("<br>");
     feedbackDiv.style.color = "#dc3545";
 }
+});
 });
