@@ -42,7 +42,10 @@ if (isValid) {
     feedbackDiv.style.color = "#dc3545";
 } else {
     feedbackDiv.innerHTML = messages.join(<br>");
-    feedbackDiv.style.color
-}
+    feedbackDiv.style.color = "#dc3545";
+</br>}
+
+//if all validation pass subit the form
+form.onsubmit;
 }
 })
