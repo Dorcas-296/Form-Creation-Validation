@@ -6,32 +6,35 @@ const feedbackDiv = document.getElementById("form-feedback");
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
+    //Retrieve and trim user input
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+
     //Initialize validation variable
     let isValid = true;
     let messages = [];
     
     //validation for username
-const usernameInput = document.getElementById("username");
-if (usernameInput.value.trim().length <3) {
+if (username.length <3) {
     isValid = false;
     messages.push("Username must be at least three characters long.");
 }
 
 //validation for email
-const emailInput = document.getElementById("email");
-if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+if (!email.includes('@') || !email.includes('.')) {
     isValid = false;
     messages.push("Email must contain both '@' and '.' characters.");
 }
 
 //validation for password
-const passwordInput = document.getElementById("password");
-if (passwordInput.value.length <8) {
+if (password.length <8) {
     isValid = false;
     messages.push("Password must contain at least 8 length");
 }
 
-//make feedback div visible
+//Display feedback
 feedbackDiv.style.display = "block";
 
 if (isValid) {
